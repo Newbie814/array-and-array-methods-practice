@@ -51,7 +51,7 @@
 //   }
 // }
 
-const hobbies = ['Bass Guitar', 'Cooking', 'Programming'];
+// const hobbies = ['Bass Guitar', 'Cooking', 'Programming'];
 // adds to end of array
 // hobbies.push('Reading');
 
@@ -98,3 +98,16 @@ const hobbies = ['Bass Guitar', 'Cooking', 'Programming'];
 // console.log(hobbies);
 // ['Bass Guitar']
 //
+
+// can store removed values in a variable
+// let removedEls = hobbies.splice(1);
+
+// can also use - values to change the start direction of the splice
+// console.log(hobbies);
+// hobbies.splice(-2);
+// console.log(hobbies);
+// ['Bass Guitar']  i.e. removed two elements from the end of the array
+
+const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+
+console.log(medianIncome);
