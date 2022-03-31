@@ -108,6 +108,27 @@
 // console.log(hobbies);
 // ['Bass Guitar']  i.e. removed two elements from the end of the array
 
-const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// const storeResults = medianIncome
 
-console.log(medianIncome);
+// if i did the above and made a change to storeResults, the original medianIncome array would also change, as what's being stored in the variable is a reference to the original array, not the original array. they are both pointing to the same array. You can use slice as follows because it creates a new array and, therefore changes to the array in one variable won't change the other array.
+
+// const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// const storeResults = medianIncome.slice(2);
+
+// medianIncome.push(37.9);
+
+// console.log(storeResults, medianIncome);
+
+// can also use - values to change the start direction of the slice
+// empty params return the entire array
+// 1 param selects that element and everything after it
+// 2 params is the start and end indexes of the slice
+
+const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// const storeResults = medianIncome.slice(2);
+const storeResults = medianIncome.concat([37.9, 34.6, 19]);
+
+console.log(storeResults, medianIncome);
+
+// concat adds the elements of an array into an existing array, push would add as a nested array
