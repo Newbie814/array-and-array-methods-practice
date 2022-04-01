@@ -134,14 +134,14 @@
 
 // concat adds the elements of an array into an existing array, push would add as a nested array
 
-const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
 // const storeResults = medianIncome.slice(2);
-const storeResults = medianIncome.concat([37.9, 34.6, 19]);
+// const storeResults = medianIncome.concat([37.9, 34.6, 19]);
 
-console.log(storeResults, medianIncome);
+// console.log(storeResults, medianIncome);
 
 // indexOf returns the index of the first element that matches the specified value. Asecond optional argument specifies the index to start the search at. If the element is not found, it returns -1. Can be handy for checking if an element is in an array before pushing it, for example. Only finds the first instance of the element.
-console.log(medianIncome.indexOf(36, 2));
+// console.log(medianIncome.indexOf(36, 2));
 
 // lasIndexOf begins checking from the right(end) and will, therefore, return the index of the last element that matches the specified value.
 
@@ -149,24 +149,47 @@ console.log(medianIncome.indexOf(36, 2));
 
 // For objects (but also available on arrays)
 
-const personData = [
-  {
-    name: 'Matt',
-  },
-  {
-    name: 'Matthew',
-  },
-];
-console.log(personData.indexOf({ name: 'Matt' }));
+// const personData = [
+//   {
+//     name: 'Matt',
+//   },
+//   {
+//     name: 'Matthew',
+//   },
+// ];
+// console.log(personData.indexOf({ name: 'Matt' }));
 // would return -1
 
 // find()   takes a function as an argument and returns the first element in the array that passes the test implemented by the function.
 // 1st parameter is a single object from array, second is the index of the object in the array, third is the name of the array itself
 
-
-const matt = personData.find(person, idx, persons); => {
-  return person.name === 'Matt';
-}
+// const matt = personData.find(person, idx, persons); => {
+//   return person.name === 'Matt';
+// }
 // would return the first object in the array that matches the condition. returns actual object, not a copy, which makes the value mutable
 
 // findIndex()   takes same function but returns the index not the object
+
+// .includes()   returns true if the array contains the specified element, false otherwise. Use case would be similar to a using !=== -1 with indexOf
+
+const prices = [10.99, 5.99, 3.99, 6.59];
+
+const tax = 0.07;
+
+const taxAdjustedPrices = [];
+
+// for (const price of prices) {
+//   let newPrice = price * (1 + tax);
+//   let totalPrice = newPrice.toFixed(2);
+//   taxAdjustedPrices.push(totalPrice);
+// }
+
+// forEach() also takes 3 arguments, the value you are looking at, the index, and the name of the array
+
+prices.forEach((price, idx, prices) => {
+  let newPrice = price * (1 + tax);
+  let totalPrice = newPrice.toFixed(2);
+  taxAdjustedPrices.push(totalPrice);
+});
+
+console.log(taxAdjustedPrices);
