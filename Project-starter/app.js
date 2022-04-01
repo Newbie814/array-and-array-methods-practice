@@ -125,10 +125,48 @@
 // 1 param selects that element and everything after it
 // 2 params is the start and end indexes of the slice
 
+// const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
+// // const storeResults = medianIncome.slice(2);
+// const storeResults = medianIncome.concat([37.9, 34.6, 19]);
+
+// console.log(storeResults, medianIncome);
+// console.log(medianIncome.indexOf(36));
+
+// concat adds the elements of an array into an existing array, push would add as a nested array
+
 const medianIncome = [54.5, 36, 24.3, 62, 100, 46];
 // const storeResults = medianIncome.slice(2);
 const storeResults = medianIncome.concat([37.9, 34.6, 19]);
 
 console.log(storeResults, medianIncome);
 
-// concat adds the elements of an array into an existing array, push would add as a nested array
+// indexOf returns the index of the first element that matches the specified value. Asecond optional argument specifies the index to start the search at. If the element is not found, it returns -1. Can be handy for checking if an element is in an array before pushing it, for example. Only finds the first instance of the element.
+console.log(medianIncome.indexOf(36, 2));
+
+// lasIndexOf begins checking from the right(end) and will, therefore, return the index of the last element that matches the specified value.
+
+// both indexOf and lastIndexOf work for primitive data types, but not reference types. (objects)
+
+// For objects (but also available on arrays)
+
+const personData = [
+  {
+    name: 'Matt',
+  },
+  {
+    name: 'Matthew',
+  },
+];
+console.log(personData.indexOf({ name: 'Matt' }));
+// would return -1
+
+// find()   takes a function as an argument and returns the first element in the array that passes the test implemented by the function.
+// 1st parameter is a single object from array, second is the index of the object in the array, third is the name of the array itself
+
+
+const matt = personData.find(person, idx, persons); => {
+  return person.name === 'Matt';
+}
+// would return the first object in the array that matches the condition. returns actual object, not a copy, which makes the value mutable
+
+// findIndex()   takes same function but returns the index not the object
