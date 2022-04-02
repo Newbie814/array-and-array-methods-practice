@@ -51,6 +51,8 @@
 //   }
 // }
 
+// ======================= push, pop, shift, unshift =======================
+
 // const hobbies = ['Bass Guitar', 'Cooking', 'Programming'];
 // adds to end of array
 // hobbies.push('Reading');
@@ -81,6 +83,8 @@
 
 // console.log(hobbies[4]);
 // undefined      ======= rarely used
+
+//  ================== splice, slice, and concat ==================
 
 //
 //  splice with two arguments will remove the element at that index and the number of elements specified
@@ -140,10 +144,12 @@
 
 // console.log(storeResults, medianIncome);
 
+// ======================indexOf and lastIndexOf ======================
+
 // indexOf returns the index of the first element that matches the specified value. Asecond optional argument specifies the index to start the search at. If the element is not found, it returns -1. Can be handy for checking if an element is in an array before pushing it, for example. Only finds the first instance of the element.
 // console.log(medianIncome.indexOf(36, 2));
 
-// lasIndexOf begins checking from the right(end) and will, therefore, return the index of the last element that matches the specified value.
+// lastIndexOf begins checking from the right(end) and will, therefore, return the index of the last element that matches the specified value.
 
 // both indexOf and lastIndexOf work for primitive data types, but not reference types. (objects)
 
@@ -159,6 +165,8 @@
 // ];
 // console.log(personData.indexOf({ name: 'Matt' }));
 // would return -1
+
+// ======================== find(), includes(), and findIndex() ========================
 
 // find()   takes a function as an argument and returns the first element in the array that passes the test implemented by the function.
 // 1st parameter is a single object from array, second is the index of the object in the array, third is the name of the array itself
@@ -184,6 +192,8 @@
 //   taxAdjustedPrices.push(totalPrice);
 // }
 
+// ================= forEach() =================
+
 // forEach() also takes 3 arguments, the value you are looking at, the index, and the name of the array
 
 // prices.forEach((price, idx, prices) => {
@@ -202,6 +212,8 @@
 
 // console.log(taxAdjustedPrices);
 
+// =============================== map()
+
 // map()   takes a function as an argument and returns a new array with the results of calling the function on every element in the calling array. Sinmilar to forEach, but returns a new array with a new address in memory, and leaves original array unchanged.
 
 // const prices = [10.99, 5.99, 3.99, 6.59];
@@ -216,6 +228,8 @@
 // });
 
 // console.log(taxAdjustedPrices);
+
+// ================== sort() and reverse() ==================
 
 // sort() by default turns everything into strings and sorts them alphabetically. Can also sort numbers, but will sort them as strings.
 // i.e., below, it checks the first charcter and sorts them in ascending and alphabetical order.
@@ -245,26 +259,22 @@
 
 // you can pass a fucntion to sort with two parameters that take numbers as arguments, and takes a compare function. The compare function takes two arguments, and returns a number. If the number is less than 0, the first argument is less than the second. If the number is greater than 0, the first argument is greater than the second. If the number is equal to 0, the first argument is equal to the second.
 // It compares every element in the array, two at a time, until it has finsihed and resorts them according to the compare function.
-const prices = [10.99, 5.99, 3.99, 6.59];
+// const prices = [10.99, 5.99, 3.99, 6.59];
 
-const tax = 0.07;
+// const tax = 0.07;
 
-const sortedPrices = prices.sort((a, b) => {
-  if (a > b) {
-    return 1;
-  } else if (a === b) {
-    return 0;
-  } else {
-    return -1;
-  }
-});
+// const sortedPrices = prices.sort((a, b) => {
+//   if (a > b) {
+//     return 1;
+//   } else if (a === b) {
+//     return 0;
+//   } else {
+//     return -1;
+//   }
+// });
 
 // puts in ascending numerical order
 // console.log(sortedPrices);
-
-// doesn't take argumetns, simply reverses the order of the array. often more appropriate to just reverse logic in function
-console.log(prices.reverse());
-// console.log(sortedPrices.reverse());
 
 // const points = [40, 100, 1, 5, 25, 10];
 
@@ -285,3 +295,14 @@ console.log(prices.reverse());
 //   points[i] = points[j];
 //   points[j] = k;
 // }
+
+// doesn't take argumetns, simply reverses the order of the array. often more appropriate to just reverse logic in function
+
+// console.log(sortedPrices.reverse());
+
+// const prices = [10.99, 5.99, 3.99, 6.59];
+// console.log(prices.reverse());
+
+// ================================================================
+
+// filter()
