@@ -305,4 +305,58 @@
 
 // ================================================================
 
-// filter()
+// ================== filter() ==================
+
+// returns a new array with all the elements that pass the test implemented by the function. Think search filters that filter by price, function that is passed is similar to the ones used for find, map, etc. params are the value(individual array element), index, and name of the array.Needs to return a value that value is true or false.
+// const prices = [10.99, 5.99, 3.99, 6.59];
+
+// const filteredPrices = prices.filter((price, idx, prices) => {
+//   return price < 5;    // returns values that come back as true
+// });
+
+// console.log(filteredPrices); // [3.99]
+
+// reminder that these arrow function could be much shorter, but this is more readable to me at the moment.
+
+// ================== reduce() ==================
+
+// reduces an array to a simpler value
+
+// can take 4 parameters for first argument: previous value(or total - this is a note not part of function), current value, current index, and name of the array. most important are first two
+
+// ex   const sum = prices.reduce((previousValue, currentValue, currentIndex, prices) => {
+
+// }, initialValue);  not intialValue is optional of array, but, like, if you are returning the sum, it would be added to this number. Pretty much transposing the returned value in this scenario.
+
+// const prices = [10.99, 5.99, 3.99, 6.59];
+
+// const sum = prices.reduce(
+//   (previousValue, currentValue, currentIndex, prices) => {
+//     return previousValue + currentValue;
+//   },
+//   0
+// );
+
+// console.log(sum);
+
+// =================================split()  s====================================
+
+// split() separates a string into o new array, split by an argument that specifies where to split. optional second argument to limit the number of elements to be created
+
+// const data = 'new york;10.99;200';
+
+// const transformData = data.split(';');
+// console.log(transformData);
+
+// =================================join()  s====================================
+
+// opposite of split, joins an array into a string. optional argument specifies what to put between the elements of the array.
+
+// const nameFragments = ['Matt', 'Sandra', 'Liam', 'Connor'];
+
+// const name = nameFragments.join(', ');
+// console.log(name);
+
+// ==================== spread operator ====================
+
+// ... pulls out all the elements of an array and puts them into a new array.
