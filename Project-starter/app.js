@@ -172,11 +172,11 @@
 
 // .includes()   returns true if the array contains the specified element, false otherwise. Use case would be similar to a using !=== -1 with indexOf
 
-const prices = [10.99, 5.99, 3.99, 6.59];
+// const prices = [10.99, 5.99, 3.99, 6.59];
 
-const tax = 0.07;
+// const tax = 0.07;
 
-const taxAdjustedPrices = [];
+// const taxAdjustedPrices = [];
 
 // for (const price of prices) {
 //   let newPrice = price * (1 + tax);
@@ -186,10 +186,102 @@ const taxAdjustedPrices = [];
 
 // forEach() also takes 3 arguments, the value you are looking at, the index, and the name of the array
 
-prices.forEach((price, idx, prices) => {
-  let newPrice = price * (1 + tax);
-  let totalPrice = newPrice.toFixed(2);
-  taxAdjustedPrices.push(totalPrice);
+// prices.forEach((price, idx, prices) => {
+//   let newPrice = price * (1 + tax);
+//   let totalPrice = newPrice.toFixed(2);
+
+//   taxAdjustedPrices.push(totalPrice);
+// });
+
+// prices.forEach((price, idx, prices) => {
+//   let newPrice = price * (1 + tax);
+//   let totalPrice = newPrice.toFixed(2);
+//   const priceObject = { index: idx, taxedPrice: totalPrice };
+//   taxAdjustedPrices.push(priceObject);
+// });
+
+// console.log(taxAdjustedPrices);
+
+// map()   takes a function as an argument and returns a new array with the results of calling the function on every element in the calling array. Sinmilar to forEach, but returns a new array with a new address in memory, and leaves original array unchanged.
+
+// const prices = [10.99, 5.99, 3.99, 6.59];
+
+// const tax = 0.07;
+
+// const taxAdjustedPrices = prices.map((price, idx, prices) => {
+//   let newPrice = price * (1 + tax);
+//   let totalPrice = newPrice.toFixed(2);
+//   const priceObject = { index: idx, taxedPrice: totalPrice };
+//   return priceObject;
+// });
+
+// console.log(taxAdjustedPrices);
+
+// sort() by default turns everything into strings and sorts them alphabetically. Can also sort numbers, but will sort them as strings.
+// i.e., below, it checks the first charcter and sorts them in ascending and alphabetical order.
+
+// ) [10.99, 3.99, 5.99, 6.59]
+// 0: 10.99
+// 1: 3.99
+// 2: 5.99
+// 3: 6.59
+// length: 4
+// [[Prototype]]: Array(0)
+
+// const prices = [10.99, 5.99, 3.99, 6.59];
+
+// const tax = 0.07;
+
+// const taxAdjustedPrices = prices.map((price, idx, prices) => {
+//   let newPrice = price * (1 + tax);
+//   let totalPrice = newPrice.toFixed(2);
+//   const priceObject = { index: idx, taxedPrice: totalPrice };
+//   return priceObject;
+// });
+
+// const sortedPrices = prices.sort();
+
+// console.log(sortedPrices);
+
+// you can pass a fucntion to sort with two parameters that take numbers as arguments, and takes a compare function. The compare function takes two arguments, and returns a number. If the number is less than 0, the first argument is less than the second. If the number is greater than 0, the first argument is greater than the second. If the number is equal to 0, the first argument is equal to the second.
+// It compares every element in the array, two at a time, until it has finsihed and resorts them according to the compare function.
+const prices = [10.99, 5.99, 3.99, 6.59];
+
+const tax = 0.07;
+
+const sortedPrices = prices.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return -1;
+  }
 });
 
-console.log(taxAdjustedPrices);
+// puts in ascending numerical order
+// console.log(sortedPrices);
+
+// doesn't take argumetns, simply reverses the order of the array. often more appropriate to just reverse logic in function
+console.log(prices.reverse());
+// console.log(sortedPrices.reverse());
+
+// const points = [40, 100, 1, 5, 25, 10];
+
+// const sortedPoints = points.sort();
+// console.log(sortedPoints);
+
+// const sortedPoints2 = points.sort(function(a, b) {
+//   return a - b;
+// });
+// console.log(sortedPoints2);
+
+//  to sort in random order, using the built in Math.random() function is not completely random, use the Fisher-Yates shuffle.
+// const points = [40, 100, 1, 5, 25, 10];
+
+// for (let i = points.length - 1; i > 0; i--) {
+//   let j = Math.floor(Math.random() * i);
+//   let k = points[i];
+//   points[i] = points[j];
+//   points[j] = k;
+// }
